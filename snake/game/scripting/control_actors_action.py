@@ -75,4 +75,6 @@ class ControlActorsAction(Action):
         snake2 = cast.get_first_actor("player2")
         snake2.turn_head(self._direction2)
 
+       
+
     

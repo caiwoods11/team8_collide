@@ -16,22 +16,19 @@ from game.services.video_service import VideoService
 from game.shared.color import Color
 from game.shared.point import Point
 
-
 def main():
     
     # create the cast
     # create two snakes player1 player2
     # create two scoreboards
-    # do not create food
 
     cast = Cast()
+    cast.add_actor("foods", Food())
     cast.add_actor("player1", Snake(100,300))
     cast.add_actor("player2", Snake(800,300))
-    cast.add_actor("score1", Score())
-    cast.add_actor("score2", Score())
-
-
-   
+    cast.add_actor("score1", Score(1))
+    cast.add_actor("score2", Score(2))
+       
     # start the game
     keyboard_service = KeyboardService()
     video_service = VideoService()
