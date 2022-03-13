@@ -1,3 +1,5 @@
+from math import isclose
+
 class Point:
     """A distance from a relative origin (0, 0).
 
@@ -42,6 +44,17 @@ class Point:
             boolean: True if both x and y are equal; false if otherwise.
         """
         return self._x == other.get_x() and self._y == other.get_y()
+
+    def food_equals(self, other):
+        """Whether or not this Point is equal to the given one.
+
+        Args:
+            other (Point): The Point to compare.
+
+        Returns: 
+            boolean: True if both x and y are equal; false if otherwise.
+        """
+        return isclose(self._x, other.get_x(), abs_tol = 25) and isclose(self._y, other.get_y(), abs_tol = 25)
 
     def get_x(self):
         """Gets the horizontal distance.
